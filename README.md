@@ -1,7 +1,7 @@
 # BERL
 Benchmarking Evolutionary Reinforcement Learning
 
-![BERL][imgs/logo.png]
+<img src="imgs/logo.png">
 
 A collaborative project for aggregating benchmarks of evolutionary algorithms on common reinforcement learning benchmarks.
 
