@@ -2,7 +2,7 @@
 Benchmarking Evolutionary Reinforcement Learning (pronounced "barrel"... sort of)
 
 <p align="center">
-  <img height="300" width="auto" src="ims/logo.png">
+  <img height="300" width="auto" src="imgs/logo.png">
 </p>
 
 A collaborative project for aggregating benchmarks of evolutionary algorithms on common reinforcement learning benchmarks.
