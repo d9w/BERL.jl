@@ -1,7 +1,9 @@
 # BERL.jl
-Benchmarking Evolutionary Reinforcement Learning
+Benchmarking Evolutionary Reinforcement Learning (pronounced "barrel"... sort of)
 
-<img src="imgs/logo.png" width="20%">
+<p align="center">
+  <img height="300" width="auto" src="ims/logo.png">
+</p>
 
 A collaborative project for aggregating benchmarks of evolutionary algorithms on common reinforcement learning benchmarks.
 
