@@ -1,4 +1,4 @@
-# BERL
+# BERL.jl
 Benchmarking Evolutionary Reinforcement Learning
 
 <img src="imgs/logo.png" width="20%">
