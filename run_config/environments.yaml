@@ -1,0 +1,12 @@
+# If true: use this benchmark to test each algorithm selected
+iris: true
+xor: true
+pybullet: false
+atari_ram: false
+
+# Gym
+Acrobot-v1: true
+CartPole-v1: true
+MountainCar-v0: true
+MountainCarContinuous-v0: true
+Pendulum-v0: true

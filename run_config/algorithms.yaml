@@ -1,0 +1,5 @@
+# If true: test the algorithm on each benchmark
+NEAT: true
+HyperNEAT: false
+CPPN: false
+CGP: true

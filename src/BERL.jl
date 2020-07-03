@@ -5,7 +5,7 @@ using NeuroEvolution
 using CartesianGeneticProgramming
 
 algs = ["CGP", "NEAT"]
-envs = ["xor", "iris", "gym"] # pybullet, atari_ram, gym
+envs = ["xor", "iris", "gym"] # pybullet, atari_ram
 
 include("environments/BERL_env.jl")
 
@@ -21,5 +21,6 @@ for a in algs
 end
 
 include("core.jl")
+include("berl_run.jl")
 
 end # module
