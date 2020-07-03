@@ -1,4 +1,16 @@
 name = "BERL"
 uuid = "1c0880a9-b26d-4988-9a3c-c84176a70426"
-authors = ["Dennis Wilson <dennis@d9w.xyz>"]
+authors = ["Dennis Wilson <dennis@d9w.xyz>", "TemplierPaul <templier.paul@gmail.com>"]
 version = "0.1.0"
+
+[deps]
+ArgParse = "c7e460c6-2fb9-53a9-8c5b-16f535851c63"
+Cambrian = "7f27c84d-2d74-42e5-be5f-94f6748267f3"
+CartesianGeneticProgramming = "a58c8383-ac42-4eac-b920-efb5a098c09c"
+Distances = "b4f34e82-e78d-54a5-968a-f98e89d6e8f7"
+Formatting = "59287772-0a20-5a39-b81b-1366585eb4c0"
+NeuroEvolution = "f1ec3a29-532f-4a5d-90df-53d9a71c4d27"
+PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
+RDatasets = "ce6b1742-4840-55fa-b093-852dadbb1d8b"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
