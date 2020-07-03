@@ -13,6 +13,7 @@ end
 environments["xor"]=XorEnv
 
 function XorEnv(cfg::Dict)
+    cfg["env"]="XOR"
     cfg["n_in"]=2
     cfg["n_out"]=1
     X, y = xor_dataset(2, 100)

@@ -1,6 +1,6 @@
 export start_berl, print_metrics
 
-function start_berl(algo_name::String, env_name::String)
+function start_berl(algo_name::String, env_name::String; env_params...)
     cfg_path = "../src/algorithms/$algo_name/$env_name.yaml"
 
     if algo_name in ["NEAT", "HyperNEAT", "CPPN"]
@@ -9,7 +9,11 @@ function start_berl(algo_name::String, env_name::String)
         cfg = CartesianGeneticProgramming.get_config(cfg_path)
     end
 
-    # Create and setup the environment 
+    for (k, v) in pairs(env_params)
+        cfg[string(k)] = v
+    end
+
+    # Create and setup the environment
     env::BERLenv = environments[env_name](cfg)
 
     # Fitness function

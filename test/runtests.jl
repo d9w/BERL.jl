@@ -1,11 +1,17 @@
 using BERL
 using Test
 
+function test_berl(a, e; env_params...)
+    d = start_berl(a, e; env_params...)
+    @test d["Best fitness"] != -Inf
+    print_metrics(d)
+end
+
 for a in ["CGP", "NEAT"]
+    test_berl(a, "gym"; gym_env="MountainCar-v0")
+
     for e in ["xor", "iris"]
-        @testset "$a x $e" begin
-            d = start_berl(a, e)
-            @test d["Best fitness"] != -Inf
-        end
+        test_berl(a, e)
     end
+
 end

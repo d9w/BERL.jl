@@ -14,4 +14,4 @@ s = ArgParseSettings()
 end
 args = parse_args(ARGS, s)
 
-start_berl(algo=args["algo"], env=args["env"]) #MountainCar-v0
+start_berl(algo=args["algo"], env=args["env"]) 

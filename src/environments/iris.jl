@@ -13,6 +13,7 @@ end
 environments["iris"]=IrisEnv
 
 function IrisEnv(cfg::Dict)
+    cfg["env"]="Iris"
     cfg["n_in"]=4
     cfg["n_out"]=3
     iris = RDatasets.dataset("datasets", "iris")
