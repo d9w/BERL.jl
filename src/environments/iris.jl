@@ -42,5 +42,5 @@ end
 
 "Sets up the env for the next generation"
 function new_gen!(env::IrisEnv, cfg::Dict=nothing)
-    env.X, env.y = xor_dataset(2, 100) # Generates new data
+    
 end

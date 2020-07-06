@@ -18,10 +18,14 @@ function run_berl()
         end
     end
 
+    println("Algorithms: ", algs)
+    println("Environments: ", envs)
     for e in envs
         for a in algs
-            if e in ["Acrobot-v1", "CartPole-v1", "MountainCar-v0", "MountainCarContinuous-v0", "Pendulum-v0"]
+            if e in gym_envs
                 d = start_berl(a, "gym"; gym_env=e)
+            elseif e in atari_envs
+                d = start_berl(a, "atari"; atari_game=e)
             else
                 d = start_berl(a, e)
             end

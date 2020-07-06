@@ -1,4 +1,7 @@
 # BERL.jl
+
+[![Build Status](https://travis-ci.org/d9w/BERL.jl.svg?branch=master)](https://travis-ci.org/d9w/BERL.jl)
+
 Benchmarking Evolutionary Reinforcement Learning (pronounced "barrel"... sort of)
 
 <p align="center">

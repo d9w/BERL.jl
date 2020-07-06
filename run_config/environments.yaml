@@ -8,5 +8,5 @@ atari_ram: false
 Acrobot-v1: true
 CartPole-v1: true
 MountainCar-v0: true
-MountainCarContinuous-v0: true
-Pendulum-v0: true
+MountainCarContinuous-v0: false
+Pendulum-v0: false

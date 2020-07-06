@@ -1,0 +1,13 @@
+language: julia
+codecov: true
+coveralls: true
+julia:
+  - 1.4
+os:
+  - linux
+  # - osx
+notifications:
+  email: false
+install:
+  - julia -e 'using Pkg; pkg"add https://github.com/d9w/Cambrian.jl"; Pkg.build();'
+  - julia -e 'using Pkg; pkg"add https://github.com/TemplierPaul/NeuroEvolution.jl"; Pkg.build();'

@@ -3,6 +3,8 @@ module BERL
 using Cambrian
 using NeuroEvolution
 using CartesianGeneticProgramming
+atari_envs=[]
+gym_envs=[]
 
 algs = ["CGP", "NEAT"]
 envs = ["xor", "iris", "gym"] # pybullet, atari_ram

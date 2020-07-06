@@ -22,12 +22,12 @@ function start_berl(algo_name::String, env_name::String; env_params...)
     # Create evolution
     e::Cambrian.Evolution = algorithms[algo_name](cfg, fit)
 
-    Cambrian.run!(e)
+    run!(e, env)
     best = sort(e.population)[end]
 
     metrics = Dict()
     metrics["Algorithm"]=algo_name
-    metrics["Environment"]=env_name
+    metrics["Environment"]= get(cfg, "gym_env", env_name)
     metrics["Best fitness"]=best.fitness[1]
 
     metrics

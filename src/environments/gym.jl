@@ -5,11 +5,11 @@ import Random
 import Formatting
 import Base.GC
 
-export GymEnv, fitness, new_gen!
+export GymEnv, fitness, new_gen!, gym_envs
 
 import RDatasets
 
-"Iris BERL environment"
+"Gym BERL environment"
 mutable struct GymEnv <: BERLenv
     name::String
     memory::Array # Array of storable data
@@ -20,6 +20,7 @@ mutable struct GymEnv <: BERLenv
 end
 
 environments["gym"]=GymEnv
+gym_envs = ["Acrobot-v1", "CartPole-v1", "MountainCar-v0", "MountainCarContinuous-v0", "Pendulum-v0"]
 
 function GymEnv(cfg::Dict)
     env_name = get!(cfg, "gym_env", "MountainCar-v0") # Default mountain car
@@ -62,6 +63,5 @@ end
 
 "Sets up the env for the next generation"
 function new_gen!(env::GymEnv, cfg::Dict=nothing)
-    println("New generation")
     env.gen += 1
 end

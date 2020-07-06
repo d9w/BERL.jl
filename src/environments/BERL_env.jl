@@ -1,4 +1,4 @@
-export BERLenv, RandomEnv, setup!, fitness, new_gen!
+export BERLenv, RandomEnv, setup!, fitness, new_gen!, run!
 
 abstract type BERLenv end
 
@@ -21,4 +21,13 @@ end
 "Sets up the env for the next generation"
 function new_gen!(env::BERLenv, cfg::Dict=nothing)
     push!(env.memory, length(env.memory))
+end
+
+## Run function
+
+function run!(e::Cambrian.Evolution, env::BERLenv)
+    for i in (e.gen+1):e.cfg["n_gen"]
+        step!(e)
+        new_gen!(env, e.cfg)
+    end
 end
