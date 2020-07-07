@@ -8,7 +8,8 @@ Benchmarking Evolutionary Reinforcement Learning (pronounced "barrel"... sort of
   <img height="300" width="auto" src="imgs/logo.png">
 </p>
 
-A collaborative project for aggregating benchmarks of evolutionary algorithms on common reinforcement learning benchmarks.
+A collaborative project for aggregating benchmarks of evolutionary algorithms on common reinforcement learning benchmarks.   
+Contribution guidelines are available [here](https://github.com/d9w/BERL.jl/tree/master/src).
 
 Algorithms:
 + NEAT
