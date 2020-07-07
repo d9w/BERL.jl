@@ -5,7 +5,7 @@
 Each algorithm is expected to be contained in a directory named after itself.   
 As an example, adding an algorithm called NAME from the NAMEPACKAGE package will require a `NAME` repository containing:
 
-1. A `_setup.jl` file
+### 1. A `_setup.jl` file
 
 This file should include:
 - A Cambrian.Evolution creation function
@@ -24,7 +24,7 @@ end
 algorithms["NAME"]=BERL_NAME
 ```
 
-2. Config files
+### 2. Config files
 
 A YAML configuration file should be included for each benchmark environment, bearing the name of the environment as defined in the global environments dictionary.
 
