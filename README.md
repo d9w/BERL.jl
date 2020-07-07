@@ -8,7 +8,7 @@ Benchmarking Evolutionary Reinforcement Learning (pronounced "barrel"... sort of
   <img height="300" width="auto" src="imgs/logo.png">
 </p>
 
-A collaborative project for aggregating benchmarks of evolutionary algorithms on common reinforcement learning benchmarks.   
+A collaborative project for aggregating benchmarks of evolutionary algorithms on common reinforcement learning benchmarks, based on [Cambrian.jl](https://github.com/d9w/Cambrian.jl).  
 Contribution guidelines are available [here](https://github.com/d9w/BERL.jl/blob/master/CONTRIBUTING.md).
 
 ## Features
@@ -24,7 +24,7 @@ Contribution guidelines are available [here](https://github.com/d9w/BERL.jl/blob
 + Atari on RAM
 
 ### Future additions
-**Algorithms**
+**Algorithms**:
 + HyperNEAT (2xfeedforward & recurrent ANNs)
 + CMA-ES (2xfeedforward & recurrent ANNs)
 + population-based REINFORCE
@@ -45,6 +45,9 @@ Contribution guidelines are available [here](https://github.com/d9w/BERL.jl/blob
 
 **CLI interaction**
 + Parseable arguments
+
+**Non-Cambrian algorithms**
++ Interaction through a simplified interface with the BERL environments
 
 ## Run instructions
 To run a selection of algorithms on BERL benchmarks, please:
