@@ -4,7 +4,7 @@ using YAML
 function run_berl()
     # Algorithms
     algs = []
-    for (k, v) in pairs(YAML.load_file("../run_config/algorithms.yaml"))
+    for (k, v) in pairs(YAML.load_file("./run_config/algorithms.yaml"))
         if v
             push!(algs, k)
         end
@@ -12,7 +12,7 @@ function run_berl()
 
     # Environments
     envs=[]
-    for (k, v) in pairs(YAML.load_file("../run_config/environments.yaml"))
+    for (k, v) in pairs(YAML.load_file("./run_config/environments.yaml"))
         if v
             push!(envs, k)
         end

@@ -3,6 +3,7 @@ module BERL
 using Cambrian
 using NeuroEvolution
 using CartesianGeneticProgramming
+export atari_envs, gym_envs, environments, algorithms
 atari_envs=[]
 gym_envs=[]
 

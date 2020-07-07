@@ -1,7 +1,7 @@
 export start_berl, print_metrics
 
 function start_berl(algo_name::String, env_name::String; env_params...)
-    cfg_path = "../src/algorithms/$algo_name/$env_name.yaml"
+    cfg_path = "./src/algorithms/$algo_name/$env_name.yaml"
 
     if algo_name in ["NEAT", "HyperNEAT", "CPPN"]
         cfg = NeuroEvolution.get_config(cfg_path)
@@ -22,13 +22,16 @@ function start_berl(algo_name::String, env_name::String; env_params...)
     # Create evolution
     e::Cambrian.Evolution = algorithms[algo_name](cfg, fit)
 
-    run!(e, env)
+    val, t, bytes, gctime, memallocs = @timed run!(e, env)
     best = sort(e.population)[end]
 
     metrics = Dict()
     metrics["Algorithm"]=algo_name
     metrics["Environment"]= get(cfg, "gym_env", env_name)
     metrics["Best fitness"]=best.fitness[1]
+    metrics["Best indiv"]=best
+    metrics["Run time"]=t
+    metrics["Memory allocated"]=bytes
 
     metrics
 end
@@ -36,4 +39,6 @@ end
 function print_metrics(m)
     println("> ", m["Algorithm"], " | ", m["Environment"])
     println(" - Final fitness: ", m["Best fitness"])
+    println(" - Run time: ", m["Run time"], "s")
+    println(" - Memory allocated: ", m["Memory allocated"], " bytes")
 end

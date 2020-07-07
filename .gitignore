@@ -25,3 +25,5 @@ Manifest.toml
 
 test/gens*
 test/logs*
+gens*
+logs*
