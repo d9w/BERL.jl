@@ -4,7 +4,7 @@ verbose: false
 d_fitness: 1
 n_population: 20
 n_gen: 100
-log_gen: 1
+log_gen: 10
 save_gen: 5
 
 # Innovation

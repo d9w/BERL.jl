@@ -17,7 +17,7 @@ function XorEnv(cfg::Dict)
     cfg["n_in"]=2
     cfg["n_out"]=1
     X, y = xor_dataset(2, 100)
-    XorEnv("Random", [], X, y)
+    XorEnv("XOR", [], X, y)
 end
 
 

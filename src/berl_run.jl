@@ -2,10 +2,13 @@ export run_berl
 using YAML
 
 function run_berl()
+    runs::Int64=0
     # Algorithms
     algs = []
     for (k, v) in pairs(YAML.load_file("./run_config/algorithms.yaml"))
-        if v
+        if k=="runs"
+            runs = v
+        elseif v
             push!(algs, k)
         end
     end
@@ -22,14 +25,20 @@ function run_berl()
     println("Environments: ", envs)
     for e in envs
         for a in algs
-            if e in gym_envs
-                d = start_berl(a, "gym"; gym_env=e)
-            elseif e in atari_envs
-                d = start_berl(a, "atari"; atari_game=e)
-            else
-                d = start_berl(a, e)
+            ids::Array{String}=[]
+            for r in 1:runs
+                if e in gym_envs
+                    d = start_berl(a, "gym"; gym_env=e)
+                elseif e in atari_envs
+                    d = start_berl(a, "atari"; atari_game=e)
+                else
+                    d = start_berl(a, e)
+                end
+                d["run"]=r
+                print_metrics(d)
+                push!(ids, d["id"])
             end
-            print_metrics(d)
+            BERLplot(ids; name="benchmark_$(a)_$e.svg")
         end
     end
 end

@@ -1,5 +1,7 @@
 export start_berl, print_metrics
 
+using UUIDs
+
 function start_berl(algo_name::String, env_name::String; env_params...)
     cfg_path = "./src/algorithms/$algo_name/$env_name.yaml"
 
@@ -15,19 +17,22 @@ function start_berl(algo_name::String, env_name::String; env_params...)
 
     # Create and setup the environment
     env::BERLenv = environments[env_name](cfg)
-
+    cfg["id"] = "$(algo_name)_$(env.name)_$(string(UUIDs.uuid4()))"
+    println(cfg["id"])
     # Fitness function
     fit::Function = i::Cambrian.Individual -> fitness(i, env)
 
     # Create evolution
     e::Cambrian.Evolution = algorithms[algo_name](cfg, fit)
+    # e.logger = CambrianLogger(string("logs/", e.id, ".log"))
 
     val, t, bytes, gctime, memallocs = @timed run!(e, env)
     best = sort(e.population)[end]
 
     metrics = Dict()
+    metrics["id"]=cfg["id"]
     metrics["Algorithm"]=algo_name
-    metrics["Environment"]= get(cfg, "gym_env", env_name)
+    metrics["Environment"]= get(cfg, "gym_env", get(cfg, "atari_game", env_name))
     metrics["Best fitness"]=best.fitness[1]
     metrics["Best indiv"]=best
     metrics["Run time"]=t

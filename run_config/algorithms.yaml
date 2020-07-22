@@ -1,3 +1,6 @@
+# Number of runs for each algo on each env
+runs: 2
+
 # If true: test the algorithm on each benchmark
 NEAT: true
 CGP: true

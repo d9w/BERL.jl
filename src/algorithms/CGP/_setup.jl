@@ -6,6 +6,7 @@ function BERL_CGP(cfg::Dict, fitness::Function)::Cambrian.Evolution
     e = Cambrian.Evolution(
         CGPInd,
         cfg;
+        id=cfg["id"],
         populate = cgp_populate!,
         evaluate = eval,
     )

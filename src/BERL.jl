@@ -25,5 +25,6 @@ end
 
 include("core.jl")
 include("berl_run.jl")
+include("plotting.jl")
 
 end # module

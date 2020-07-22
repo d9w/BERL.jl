@@ -15,7 +15,7 @@ function BERL_NEAT(cfg::Dict, fitness::Function)::Cambrian.Evolution
     end
 
     populate!::Function = e::Evolution -> NEAT_populate!(e, selection)
-    Evolution(NEATIndividual, cfg; evaluate = evaluate!, populate = populate!)
+    Evolution(NEATIndividual, cfg; id=cfg["id"], evaluate = evaluate!, populate = populate!)
 end
 
 function process(i::NEATIndiv, X)

@@ -4,14 +4,15 @@ using Test
 using Cambrian
 using CartesianGeneticProgramming
 using NeuroEvolution
+using UUIDs
 cd("..")
 
 "Tests an environment with CGP"
 function test_env(env_name::String; env_params...)
     if env_name == "gym"
-        name = string("Gym ", env_params[:gym_env])
+        name = string("Gym_", env_params[:gym_env])
     elseif env_name == "atari"
-        name = string("Atari ", env_params[:atari_game])
+        name = string("Atari_", env_params[:atari_game])
     else
         name = env_name
     end
@@ -19,7 +20,6 @@ function test_env(env_name::String; env_params...)
         @test env_name in keys(environments)
         cfg_path = "./src/algorithms/CGP/$env_name.yaml"
         cfg = CartesianGeneticProgramming.get_config(cfg_path)
-
         for (k, v) in pairs(env_params)
             cfg[string(k)] = v
         end
@@ -54,7 +54,7 @@ function test_algo(algo_name::String)
 
         # Fitness function
         fit::Function = i::Cambrian.Individual -> fitness(i, env)
-
+        cfg["id"] = "TestAlgo_$(algo_name)_$(env.name)_$(string(UUIDs.uuid4()))"
         evo = algorithms[algo_name](cfg, fit)
         @test typeof(evo)==Cambrian.Evolution
         @test length(evo.population)>0
@@ -66,7 +66,9 @@ function test_berl()
     # Algorithms
     algs = []
     for (a, v) in pairs(YAML.load_file("./run_config/algorithms.yaml"))
-        test_algo(a)
+        if a != "runs"
+            test_algo(a)
+        end
     end
 
     # Environments
@@ -92,4 +94,14 @@ function test_berl()
     end
 end
 
-test_berl()
+# test_berl()
+
+println("Starting tests")
+
+@testset "plot" begin
+    BERLplot("CGP_XOR_f7739035-ba96-4400-b9bf-0492f6ec1da0")
+    BERLplot(["CGP_XOR_f7739035-ba96-4400-b9bf-0492f6ec1da0",
+    "CGP_XOR_ea455af9-9423-452c-8946-f67bf39a7da4"]; name="test.svg")
+end
+
+run_berl()

@@ -27,3 +27,4 @@ test/gens*
 test/logs*
 gens*
 logs*
+plots*
