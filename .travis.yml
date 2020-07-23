@@ -8,6 +8,6 @@ os:
   # - osx
 notifications:
   email: false
-install
+install:
   - julia -e 'using Pkg; pkg"add https://github.com/d9w/Cambrian.jl";'
   - julia -e 'using Pkg; pkg"add https://github.com/TemplierPaul/NeuroEvolution.jl"; Pkg.build();'
