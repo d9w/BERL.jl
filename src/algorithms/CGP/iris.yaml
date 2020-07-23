@@ -1,9 +1,9 @@
 # Darwin.jl settings
 seed: 0
 d_fitness: 1
-n_population: 5
+n_population: 10
 n_elite: 1
-n_gen: 100
+n_gen: 1000
 log_gen: 10
 save_gen: 0
 m_rate: 0.1
