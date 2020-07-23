@@ -7,10 +7,11 @@ export atari_envs, gym_envs, environments, algorithms
 atari_envs=[]
 gym_envs=[]
 
-algs = ["CGP", "NEAT"]
+algs = ["CGP", "NEAT", "HyperNEAT"]
 envs = ["xor", "iris", "gym"] # pybullet, atari_ram
 
 include("environments/BERL_env.jl")
+include("step.jl")
 
 environments = Dict()
 algorithms = Dict()
@@ -25,6 +26,6 @@ end
 
 include("core.jl")
 include("berl_run.jl")
-include("plotting.jl")
+# include("plotting.jl")
 
 end # module

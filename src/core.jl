@@ -26,7 +26,7 @@ function start_berl(algo_name::String, env_name::String; env_params...)
     e::Cambrian.Evolution = algorithms[algo_name](cfg, fit)
     # e.logger = CambrianLogger(string("logs/", e.id, ".log"))
 
-    val, t, bytes, gctime, memallocs = @timed run!(e, env)
+    val, t, bytes, gctime, memallocs = @timed BERL.run!(e, env)
     best = sort(e.population)[end]
 
     metrics = Dict()

@@ -20,6 +20,8 @@ function test_env(env_name::String; env_params...)
         @test env_name in keys(environments)
         cfg_path = "./src/algorithms/CGP/$env_name.yaml"
         cfg = CartesianGeneticProgramming.get_config(cfg_path)
+        cfg["n_population"]=10
+        cfg["n_gen"]=10
         for (k, v) in pairs(env_params)
             cfg[string(k)] = v
         end
@@ -94,14 +96,14 @@ function test_berl()
     end
 end
 
-# test_berl()
-
 println("Starting tests")
 
-@testset "plot" begin
-    BERLplot("CGP_XOR_f7739035-ba96-4400-b9bf-0492f6ec1da0")
-    BERLplot(["CGP_XOR_f7739035-ba96-4400-b9bf-0492f6ec1da0",
-    "CGP_XOR_ea455af9-9423-452c-8946-f67bf39a7da4"]; name="test.svg")
-end
+test_berl()
 
-run_berl()
+# run_berl()
+
+# @testset "plot" begin
+#     BERLplot("CGP_XOR_f7739035-ba96-4400-b9bf-0492f6ec1da0")
+#     BERLplot(["CGP_XOR_f7739035-ba96-4400-b9bf-0492f6ec1da0",
+#     "CGP_XOR_ea455af9-9423-452c-8946-f67bf39a7da4"]; name="test.svg")
+# end

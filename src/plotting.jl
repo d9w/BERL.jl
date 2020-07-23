@@ -8,18 +8,18 @@ set_default_plot_size(30cm, 20cm)
 function logs_to_layers(id::String; color)
 	path = "logs/$id.log"
     fileString = readlines(path)
-	steps::Array = []
+	evals::Array = []
 	max_fitness::Array = []
 	time::Array = []
 	for i in fileString
 		l = split(i, " ")
-		push!(steps, parse(Int64, l[4]))
 		t = split(l[1], "\t")[1]
-		push!(time, DateTime(t)) #timestamp
-		push!(max_fitness, float(parse(Float64, l[6]))) #max
+		push!(time, DateTime(t)) # timestamp
+		push!(evals, parse(Float64, l[end])) # Evaluations
+		push!(max_fitness, float(parse(Float64, l[6]))) # max fitness
 	end
 	time = Dates.value.(time .- time[1])
-	f = layer(x=steps, y=max_fitness, Geom.point, Geom.line, Theme(default_color=color))
+	f = layer(x=evals, y=max_fitness, Geom.point, Geom.line, Theme(default_color=color))
 	t = layer(x=time,  y=max_fitness, Geom.point, Geom.line, Theme(default_color=color))
 	f, t
 end

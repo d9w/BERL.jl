@@ -23,9 +23,10 @@ function run_berl()
 
     println("Algorithms: ", algs)
     println("Environments: ", envs)
+    ids::Array{String}
     for e in envs
         for a in algs
-            ids::Array{String}=[]
+            ids=[]
             for r in 1:runs
                 if e in gym_envs
                     d = start_berl(a, "gym"; gym_env=e)
@@ -38,7 +39,11 @@ function run_berl()
                 print_metrics(d)
                 push!(ids, d["id"])
             end
-            BERLplot(ids; name="benchmark_$(a)_$e.svg")
+            try
+                BERLplot(ids; name="benchmark_$(a)_$e.svg")
+            catch
+
+            end
         end
     end
 end
