@@ -1,6 +1,7 @@
 # BERL.jl
 
 [![Build Status](https://travis-ci.org/d9w/BERL.jl.svg?branch=master)](https://travis-ci.org/d9w/BERL.jl)
+[![Coverage Status](https://coveralls.io/repos/github/d9w/BERL.jl/badge.svg?branch=master)](https://coveralls.io/github/d9w/BERL.jl?branch=master)
 
 Benchmarking Evolutionary Reinforcement Learning (pronounced "barrel"... sort of)
 
