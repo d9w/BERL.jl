@@ -23,10 +23,3 @@ script:
     - julia -e 'using Pkg;
                 Pkg.activate(".");
                 Pkg.test(coverage = true);'
-
-after_success:
-    - julia -e 'using Pkg;
-                Pkg.activate(".");
-                Pkg.add("Coverage");
-                using Coverage;
-                Codecov.submit(process_folder())'

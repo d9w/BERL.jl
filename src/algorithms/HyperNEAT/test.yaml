@@ -57,4 +57,4 @@ gauss: true
 hyperNEAT: true
 hn_activation: "sigmoid"
 hn_hidden_layers: [5, 5] # List of sizes of hidden layers, in processing order (do NOT include input and output)
-hn_link_all_layers: true
+hn_link_all_layers: false

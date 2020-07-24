@@ -23,10 +23,9 @@ function run_berl()
 
     println("Algorithms: ", algs)
     println("Environments: ", envs)
-    ids::Array{String}
     for e in envs
         for a in algs
-            ids=[]
+            ids::Array{String}=[]
             for r in 1:runs
                 if e in gym_envs
                     d = start_berl(a, "gym"; gym_env=e)

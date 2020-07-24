@@ -37,10 +37,16 @@ function fitness(indiv::Cambrian.Individual, env::IrisEnv)
             accuracy += 1
         end
     end
-    [accuracy / size(env.X, 1)]
+    f = [accuracy / size(env.X, 2)]
+    try
+        Integer.(round.(f))
+    catch
+        println(f, accuracy, size(env.X, 2))
+    end
+    f
 end
 
 "Sets up the env for the next generation"
 function new_gen!(env::IrisEnv, cfg::Dict=nothing)
-    
+
 end

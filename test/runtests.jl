@@ -87,7 +87,7 @@ function test_berl()
 
     # Start BERL
     @testset "Start BERL" begin
-        m = start_berl("CGP", "xor")
+        m = start_berl("CGP", "iris")
         @test typeof(m)==Dict{Any,Any}
         @test m["Best fitness"]>0
         @test m["Run time"]>0
