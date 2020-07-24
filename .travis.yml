@@ -15,7 +15,7 @@ script:
                 Pkg.add("Conda");
                 using Conda;
                 Conda.add("numpy");
-                Conda.add("scipy==0.17.1");
+                Conda.add("scipy");
                 ENV["PYTHONHOME"] = "";
                 Conda.add("python=3.6");
                 Pkg.build("PyCall");'
