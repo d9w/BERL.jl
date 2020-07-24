@@ -20,6 +20,3 @@ script:
                 Conda.add("python=3.6");
                 Pkg.build("PyCall");'
     - ~/.julia/conda/3/bin/pip install 'gym[atari]==0.11.0'
-    - julia -e 'using Pkg;
-                Pkg.activate(".");
-                Pkg.test(coverage = false);'
