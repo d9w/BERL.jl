@@ -23,5 +23,5 @@ script:
     - julia -e 'using Pkg;
                 Pkg.activate(".");
                 Pkg.build();
-                Pkg.test();
+                Pkg.test();'
  
