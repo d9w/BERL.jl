@@ -89,6 +89,12 @@ git-tree-sha1 = "27eb374570946a02aa184ef5b403dabaa7380693"
 uuid = "3da002f7-5984-5a60-b8a6-cbb66c0b333f"
 version = "0.10.4"
 
+[[ColorVectorSpace]]
+deps = ["ColorTypes", "Colors", "FixedPointNumbers", "LinearAlgebra", "SpecialFunctions", "Statistics", "StatsBase"]
+git-tree-sha1 = "bd0c0c81a39923bc03f9c3b61d89ad816e741002"
+uuid = "c3611d14-8923-5661-9e6a-0046d554d3a4"
+version = "0.8.5"
+
 [[Colors]]
 deps = ["ColorTypes", "FixedPointNumbers", "InteractiveUtils", "Reexport"]
 git-tree-sha1 = "1e9bba7984e78aa8cdeea7f9f7cc984ad4e4b1c7"
@@ -130,6 +136,12 @@ deps = ["StaticArrays"]
 git-tree-sha1 = "0b17db36e7e03f8437e0d1f55aea3e4a60c74353"
 uuid = "d38c429a-6771-53c6-b99e-75d170b6e991"
 version = "0.5.3"
+
+[[CoordinateTransformations]]
+deps = ["LinearAlgebra", "Rotations", "StaticArrays"]
+git-tree-sha1 = "71333ea3f841bca6c1aa2863f11758eb9b37bfbc"
+uuid = "150eb455-5306-5404-9cee-2592286d6298"
+version = "0.5.1"
 
 [[CoupledFields]]
 deps = ["LinearAlgebra", "Statistics", "StatsBase"]
@@ -275,11 +287,35 @@ git-tree-sha1 = "3d6d5025e08ce535c90979303ec6ab103c8a09b9"
 uuid = "c91e804a-d5a3-530f-b6f0-dfbca275c004"
 version = "1.3.0"
 
+[[Graphics]]
+deps = ["Colors", "LinearAlgebra", "NaNMath"]
+git-tree-sha1 = "45d684ead5b65c043ad46bd5be750d61c39d7ef8"
+uuid = "a2bd30eb-e257-5431-a919-1863eab51364"
+version = "1.0.2"
+
 [[Hexagons]]
 deps = ["Test"]
 git-tree-sha1 = "de4a6f9e7c4710ced6838ca906f81905f7385fd6"
 uuid = "a1b4810d-1bce-5fbd-ac56-80944d57a21f"
 version = "0.2.0"
+
+[[IdentityRanges]]
+deps = ["OffsetArrays"]
+git-tree-sha1 = "be8fcd695c4da16a1d6d0cd213cb88090a150e3b"
+uuid = "bbac6d45-d8f3-5730-bfe4-7a449cd117ca"
+version = "0.3.1"
+
+[[ImageCore]]
+deps = ["Colors", "FixedPointNumbers", "Graphics", "MappedArrays", "MosaicViews", "OffsetArrays", "PaddedViews", "Reexport", "Requires"]
+git-tree-sha1 = "a652c05f8f374861580d420b420fddf3e2e84312"
+uuid = "a09fc81d-aa75-5fe9-8630-4744c3626534"
+version = "0.8.14"
+
+[[ImageTransformations]]
+deps = ["AxisAlgorithms", "ColorVectorSpace", "CoordinateTransformations", "IdentityRanges", "ImageCore", "Interpolations", "OffsetArrays", "StaticArrays"]
+git-tree-sha1 = "34e3b7549af44043e37ba321334afa322ec63a9d"
+uuid = "02fcd773-0e25-5acc-982a-7f6622650795"
+version = "0.8.4"
 
 [[IndirectArrays]]
 git-tree-sha1 = "c2a145a145dc03a7620af1444e0264ef907bd44f"
@@ -380,6 +416,11 @@ git-tree-sha1 = "f7d2e3f654af75f01ec49be82c231c382214223a"
 uuid = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
 version = "0.5.5"
 
+[[MappedArrays]]
+git-tree-sha1 = "e2a02fe7ee86a10c707ff1756ab1650b40b140bb"
+uuid = "dbb5928d-eab1-5f90-85c2-b9b0edb7c900"
+version = "0.2.2"
+
 [[Markdown]]
 deps = ["Base64"]
 uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
@@ -409,6 +450,12 @@ deps = ["ExprTools"]
 git-tree-sha1 = "916b850daad0d46b8c71f65f719c49957e9513ed"
 uuid = "78c3b35d-d492-501b-9361-3d52fe80e533"
 version = "0.7.1"
+
+[[MosaicViews]]
+deps = ["OffsetArrays", "PaddedViews"]
+git-tree-sha1 = "b483b88403ac0ac01667778cbb29462b111b1deb"
+uuid = "e94cdb99-869f-56ef-bcf0-1ae2bcbe0389"
+version = "0.2.2"
 
 [[NLSolversBase]]
 deps = ["DiffResults", "Distributed", "FiniteDiff", "ForwardDiff"]
@@ -462,6 +509,12 @@ deps = ["Arpack", "LinearAlgebra", "SparseArrays", "SuiteSparse", "Test"]
 git-tree-sha1 = "2fc6f50ddd959e462f0a2dbc802ddf2a539c6e35"
 uuid = "90014a1f-27ba-587c-ab20-58faa44d9150"
 version = "0.9.12"
+
+[[PaddedViews]]
+deps = ["OffsetArrays"]
+git-tree-sha1 = "100195a79b577d5747db98bf1732c3686285fa1e"
+uuid = "5432bcbf-9aad-5242-b902-cca2824c8663"
+version = "0.5.5"
 
 [[Parameters]]
 deps = ["OrderedCollections", "UnPack"]
@@ -564,6 +617,12 @@ deps = ["Libdl", "Pkg"]
 git-tree-sha1 = "d76185aa1f421306dec73c057aa384bad74188f0"
 uuid = "f50d1b31-88e8-58de-be2c-1cc44531875f"
 version = "0.2.2+1"
+
+[[Rotations]]
+deps = ["LinearAlgebra", "StaticArrays", "Statistics"]
+git-tree-sha1 = "d5f83867093db7319a9366d55f29280ecae9bcda"
+uuid = "6038ab10-8711-5258-84ad-4b1120ba62dc"
+version = "0.13.0"
 
 [[SHA]]
 uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
