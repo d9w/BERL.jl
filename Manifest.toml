@@ -423,7 +423,7 @@ version = "0.3.3"
 
 [[NeuroEvolution]]
 deps = ["Cambrian", "Formatting", "JSON", "Random", "Test", "YAML"]
-git-tree-sha1 = "b52f5adffabecb4e2b6e80141c9f70226bd4a684"
+git-tree-sha1 = "00c8d87b87266dbc19723f9bcd7dff2722019064"
 repo-rev = "master"
 repo-url = "https://github.com/TemplierPaul/NeuroEvolution.jl"
 uuid = "f1ec3a29-532f-4a5d-90df-53d9a71c4d27"
