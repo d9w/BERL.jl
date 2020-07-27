@@ -52,7 +52,11 @@ function fitness(indiv::Cambrian.Individual, env::GymEnv)
     max_obs = 2*pi
 
     while ~done
+<<<<<<< HEAD
         action = process(indiv, obs ./ max_obs)
+=======
+        action = process(indiv, obs ./ max_obs))
+>>>>>>> 5ae72b8e578cc17b6e37bbb535d956338a443684
         obs, reward, done, _ = game.step(action)
         newmax = maximum(abs.(obs))
         if newmax > max_obs

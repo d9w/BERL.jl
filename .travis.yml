@@ -19,6 +19,10 @@ script:
                 ENV["PYTHONHOME"] = "";
                 Conda.add("python=3.6");
                 Conda.add("bullet");
+<<<<<<< HEAD
+=======
+                Conda.add("gym");
+>>>>>>> 5ae72b8e578cc17b6e37bbb535d956338a443684
                 Pkg.build("PyCall");'
     - ~/.julia/conda/3/bin/pip install 'gym[atari]==0.11.0'
     - julia -e 'using Pkg;
