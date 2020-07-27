@@ -1,7 +1,7 @@
 # If true: use this benchmark to test each algorithm selected
 iris: true
 xor: true
-# pybullet: false
+pybullet: true
 
 # Gym
 Acrobot-v1: true
