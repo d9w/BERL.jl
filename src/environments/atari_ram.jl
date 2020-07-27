@@ -38,7 +38,7 @@ function AtariEnv(cfg::Dict)
 end
 
 "Returns the fitness of one Cambrian Individual in this environment"
-function fitness(indiv::Cambrian.Individual, env::AtariEnv)
+function fitness(indiv::Cambrian.Individual, env::AtariEnv; seed=0, max_frames=18000)
     game = Game(env.env_name, env.seed)
     reward = 0.0
     frames = 0
