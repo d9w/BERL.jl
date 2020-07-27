@@ -30,7 +30,7 @@ function run_berl()
                 if e in gym_envs
                     d = start_berl(a, "gym"; gym_env=e)
                 elseif e in atari_envs
-                    d = start_berl(a, "atari"; atari_game=e)
+                    d = start_berl(a, "atari_ram"; atari_game=e)
                 else
                     d = start_berl(a, e)
                 end

@@ -8,7 +8,7 @@ atari_envs=[]
 gym_envs=[]
 
 algs = ["CGP", "NEAT", "HyperNEAT"]
-envs = ["xor", "iris", "gym"] # pybullet, atari_ram
+envs = ["xor", "iris", "gym", "atari_ram"] # pybullet, atari_ram
 
 include("environments/BERL_env.jl")
 include("step.jl")
