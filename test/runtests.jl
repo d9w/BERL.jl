@@ -83,7 +83,7 @@ function test_berl()
         if e in gym_envs
             d = test_env("gym"; gym_env=e)
         elseif e in atari_envs
-            d = test_env("atari"; atari_game=e)
+            d = test_env("atari_ram"; atari_game=e)
         else
             d = test_env(e)
         end

@@ -23,7 +23,7 @@ mutable struct AtariEnv <: BERLenv
     seed
 end
 
-environments["atari"]=AtariEnv
+environments["atari_ram"]=AtariEnv
 atari_envs=["centipede"]
 
 function AtariEnv(cfg::Dict)
