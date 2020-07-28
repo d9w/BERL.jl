@@ -20,11 +20,8 @@ script:
                 Conda.add("python=3.6");
                 Pkg.build("PyCall");'
     - ~/.julia/conda/3/bin/pip install 'gym[atari]==0.11.0'
+    - ~/.julia/conda/3/bin/pip install 'pybullet'
     - julia -e 'using Pkg;
-                using Conda;
-                Conda.add("bullet");
-                Pkg.build("Conda");
-                Pkg.build("PyCall");
                 Pkg.activate(".");
                 Pkg.build();
                 Pkg.test();'
