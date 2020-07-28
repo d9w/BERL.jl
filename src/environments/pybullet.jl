@@ -42,7 +42,7 @@ function BulletEnv(cfg::Dict)
 end
 
 "Returns the fitness of one Cambrian Individual in this environment"
-function fitness(indiv::Cambrian.Individual, env::GymEnv)
+function fitness(indiv::Cambrian.Individual, env::BulletEnv)
     game = env.gym.make(env.env_name)
     game.seed(env.gen)
     obs = game.reset()
@@ -70,6 +70,6 @@ function fitness(indiv::Cambrian.Individual, env::GymEnv)
 end
 
 "Sets up the env for the next generation"
-function new_gen!(env::GymEnv, cfg::Dict=nothing)
+function new_gen!(env::BulletEnv, cfg::Dict=nothing)
     env.gen += 1
 end
