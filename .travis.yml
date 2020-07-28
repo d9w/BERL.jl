@@ -19,7 +19,7 @@ script:
                 Conda.add("numpy");
                 Conda.add("scipy");
                 ENV["PYTHONHOME"] = "";
-                Conda.add("python=3.6");
+                Conda.add("python=3.7.6");
                 Pkg.build("PyCall");'
     - ~/.julia/conda/3/bin/pip install 'gym[atari]==0.11.0'
     - ~/.julia/conda/3/bin/pip install 'pybullet'
