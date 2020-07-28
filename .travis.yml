@@ -10,6 +10,7 @@ notifications:
   slack:
     rooms:
     - perso-s0z5415:3tqMuSKvjGVxMx027X7hOOhu#BERL
+  email: false
 script:
     - julia -e 'using Pkg;
                 Pkg.activate(".");
