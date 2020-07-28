@@ -17,13 +17,13 @@ script:
                 Pkg.build();
                 Pkg.add("Conda");
                 using Conda;
-                Conda.add("numpy");
-                Conda.add("scipy");
+                Conda.add("numpy=1.18.5");
+                Conda.add("scipy=1.4.1");
                 ENV["PYTHONHOME"] = "";
                 Conda.add("python=3.7.6");
                 Pkg.build("PyCall");'
-    - ~/.julia/conda/3/bin/pip install 'gym[atari]==0.11.0'
-    - ~/.julia/conda/3/bin/pip install 'pybullet'
+    - ~/.julia/conda/3/bin/pip install 'gym[atari]==0.14.0'
+    - ~/.julia/conda/3/bin/pip install 'pybullet=2.8.4'
     - julia -e 'using Pkg;
                 Pkg.activate(".");
                 Pkg.build();
