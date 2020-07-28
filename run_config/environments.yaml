@@ -9,4 +9,4 @@ CartPole-v1: true
 MountainCar-v0: true
 
 # Atari_ram
-centipede: true
+# centipede: true
