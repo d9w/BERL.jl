@@ -10,6 +10,11 @@ notifications:
   slack:
     rooms:
     - perso-s0z5415:3tqMuSKvjGVxMx027X7hOOhu#BERL
+    template:
+      - "`%{result}` - Message: %{message}"
+      - "Repo `%{repository_slug}` *%{result}* build (<%{build_url}|#%{build_number}>) for commit (<%{compare_url}|%{commit}>) on branch `%{branch}`."
+      - "Execution time: *%{duration}*"
+      
   email: false
 script:
     - julia -e 'using Pkg;
