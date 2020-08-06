@@ -16,14 +16,12 @@ Contribution guidelines are available [here](https://github.com/d9w/BERL.jl/blob
 ### Implemented
 **Algorithms**:
 + NEAT
-+ HyperNEAT
 + CGP
 
 **Environments**:
 + Iris classification
 + XOR
 + Gym classic control
-+ PyBullet
 + Atari on RAM
 
 ### Future additions
@@ -37,6 +35,7 @@ Contribution guidelines are available [here](https://github.com/d9w/BERL.jl/blob
 
 **Environments**:
 + mujoco
++ pybullet
 + mario
 
 ## Other ideas to integrate

@@ -102,12 +102,12 @@ end
 
 println("Starting tests")
 
-test_berl()
+# test_berl()
 
 # run_berl()
 
-# @testset "plot" begin
-#     BERLplot("CGP_XOR_f7739035-ba96-4400-b9bf-0492f6ec1da0")
-#     BERLplot(["CGP_XOR_f7739035-ba96-4400-b9bf-0492f6ec1da0",
-#     "CGP_XOR_ea455af9-9423-452c-8946-f67bf39a7da4"]; name="test.svg")
-# end
+@testset "plot" begin
+    BERLplot("CGP_XOR_f7739035-ba96-4400-b9bf-0492f6ec1da0")
+    BERLplot(["CGP_XOR_f7739035-ba96-4400-b9bf-0492f6ec1da0",
+    "CGP_XOR_ea455af9-9423-452c-8946-f67bf39a7da4"]; name="test.svg")
+end
