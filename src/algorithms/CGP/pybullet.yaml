@@ -12,7 +12,7 @@ rows: 1
 columns: 100
 recur: 0.2
 out_m_rate: 0.3
-gym_env: 'HopperBulletEnv-v0'
+gym_env: 'AntBulletEnv-v0'
 functions:
   - f_add
   - f_subtract
