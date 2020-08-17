@@ -28,7 +28,7 @@ environments["pybullet"]=BulletEnv
 function BulletEnv(cfg::Dict)
     pybullet_envs = pyimport("pybullet_envs")
     gym = pyimport("gym")
-    cfg["env"] = get!(cfg, "gym_env", "AntBulletEnv-v0")
+    cfg["env"] = get!(cfg, "gym_env", "AntBulletEnv-v0") #'HopperBulletEnv-v0'
     env = gym.make(cfg["env"])
     cfg["n_out"] = length(env.action_space.sample())
     cfg["n_in"] = length(env.observation_space.sample())
@@ -71,5 +71,5 @@ end
 
 "Sets up the env for the next generation"
 function new_gen!(env::BulletEnv, cfg::Dict=nothing)
-    env.gen += 1
+    #env.gen += 1
 end

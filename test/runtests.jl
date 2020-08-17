@@ -102,9 +102,9 @@ end
 
 println("Starting tests")
 
-test_berl()
+# test_berl()
 
-# run_berl()
+run_berl()
 
 # @testset "plot" begin
 #     BERLplot("CGP_XOR_f7739035-ba96-4400-b9bf-0492f6ec1da0")

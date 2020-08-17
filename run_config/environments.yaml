@@ -1,12 +1,12 @@
 # If true: use this benchmark to test each algorithm selected
-iris: true
-xor: true
-pybullet: true
+iris: false
+xor: false
+pybullet: false
 
 # Gym
-Acrobot-v1: true
+Acrobot-v1: false
 CartPole-v1: true
 MountainCar-v0: true
 
 # Atari_ram
-centipede: true
+centipede: false

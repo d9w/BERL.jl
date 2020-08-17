@@ -49,7 +49,8 @@ function fitness(indiv::Cambrian.Individual, env::GymEnv)
                           maximum(game.observation_space.high)))
 
     while ~done
-        action = argmax(process(indiv, obs ./ max_obs))-1
+        action_vect = process(indiv, obs ./ max_obs)
+        action = argmax(action_vect)[2]-1
         obs, reward, done, _ = game.step(action)
         total_reward += reward
         env.n_steps += 1
