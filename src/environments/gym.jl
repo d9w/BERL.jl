@@ -24,7 +24,7 @@ gym_envs = ["Acrobot-v1", "CartPole-v1", "MountainCar-v0", "MountainCarContinuou
 
 function GymEnv(cfg::Dict)
     env_name = get!(cfg, "gym_env", "MountainCar-v0") # Default mountain car
-    cfg["env"]="Gym - $env_name"
+    cfg["env"]="Gym-$env_name"
 
     gym = pyimport("gym")
     game = gym.make(env_name)
@@ -50,7 +50,8 @@ function fitness(indiv::Cambrian.Individual, env::GymEnv)
 
     while ~done
         action_vect = process(indiv, obs ./ max_obs)
-        action = argmax(action_vect)[2]-1
+        # println(action_vect)
+        action = argmax(action_vect)-1
         obs, reward, done, _ = game.step(action)
         total_reward += reward
         env.n_steps += 1

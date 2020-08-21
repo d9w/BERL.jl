@@ -17,7 +17,9 @@ function start_berl(algo_name::String, env_name::String; env_params...)
 
     # Create and setup the environment
     env::BERLenv = environments[env_name](cfg)
-    cfg["id"] = "$(algo_name)_$(env.name)_$(string(UUIDs.uuid4()))"
+    id = string(UUIDs.uuid1())
+    println(id)
+    cfg["id"] = "$(algo_name)_$(env.name)_$id)"
     println(cfg["id"])
     # Fitness function
     fit::Function = i::Cambrian.Individual -> fitness(i, env)

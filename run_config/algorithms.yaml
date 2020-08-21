@@ -3,5 +3,5 @@ runs: 2
 
 # If true: test the algorithm on each benchmark
 NEAT: true
-HyperNEAT: true
+HyperNEAT: false
 CGP: true
